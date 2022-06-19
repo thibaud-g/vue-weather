@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <main>
+      
       <div class="search-box">
         <input
           type="text"
@@ -9,7 +10,8 @@
           v-model="query"
           v-on:keypress='fetchWeather'/>
       </div>
-      <div class="weather-wrap" v-if="typeof weather.main != 'undefined'" >
+      <h1>Search a location to see the meteo:</h1>
+      <div class="weather-wrap animate__animated animate__fadeIn" v-if="typeof weather.main != 'undefined'" >
         <div class="location-box">
           <div class="location"> {{weather.name}}, {{weather.sys.country}}</div>
           <div class="date">{{dateBuilder()}}</div>
@@ -85,7 +87,14 @@ export default {
 
     background-image: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.75));
   }
-
+  h1{
+    color: #FFF;
+    font-weight: 400;
+    font-size: 28px;
+    text-align: center;
+    text-shadow: 1px 3px rgba(0, 0, 0, 0.25);
+    margin-bottom: 10%;
+  }
   .search-box{
     width: 100%;
     margin-bottom: 30px;
